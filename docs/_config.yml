@@ -15,7 +15,7 @@ twitter_username:
 github_username:  brad-dallin
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 
