@@ -2,44 +2,52 @@
 
 # Site settings
 title: Laptop Chemistry
-email: bradley.dallin.phd@gmail.com
+author:
+  name: Brad Dallin
+  email: bradley.dallin.phd@gmail.com
 description: >-
   My digital workspace for computational chemistry research,
   cheminformatics tools, and scientific computing projects.
   Sharing thoughts on methods, discoveries, and open source
   contributions that catch my attention in the world of scientific
   computing.
-baseurl: ""
-url: "https://brad-dallin.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username:
-github_username:  brad-dallin
+
 
 # Build settings
-# theme: minima
 plugins:
-  - jekyll-feed
+ - jekyll-feed
+ - jekyll-seo-tag
 
-# Exclude
-exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
 
-# GitHub Pages
-lsi: false
-# safe: true
-# source: docs
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+# Minima settings
+minima:
+  # Minima skin selection. Available skins are:
+  #   * classic            Default, light color scheme.
+  #   * dark               Dark variant of the classic skin.
+  #   * auto               Adaptive skin based on the classic and dark skins.
+  #   * solarized-light    Light variant of solarized color scheme.
+  #   * solarized-dark     Dark variant of solarized color scheme.
+  #   * solarized          Adaptive skin for solarized color scheme skins.
+  skin: auto
+
+  # Specific site navigation
+  nav_pages:
+    - about.md
+
+  # Set to `true` to show excerpts on the homepage.
+  show_excerpts: false
+
+  # Minima date format
+  date_format: "%b %d, %Y"
+
+  # Socials
+  social_links:
+    - title: GitHub
+      icon: github
+      url: https://github.com/brad-dallin
+    - title: LinkedIn
+      icon: linkedin
+      url: https://www.linkedin.com/in/brad-dallin
+
+  # Hide RSS feed
+  hide_site_feed_link: false
