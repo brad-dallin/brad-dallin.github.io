@@ -1,29 +1,38 @@
-# Jekyll build files
+# Dependencies
+node_modules/
+vendor/
+.bundle/
+
+# Environment
+.env
+.env.*
+env/
+.venv/
+venv/
+
+# Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 
-# Bundler
-.bundle/
-vendor/
-
-# Dependency directories
-node_modules/
-venv/
-env/
-.venv/
-.env/
-
-# Cache and temporary files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 .ipynb_checkpoints/
 
-# Data files
+# IDE and Editor Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Data and Database Files
 *.csv
 *.xlsx
+*.json
 *.db
 *.sqlite
 *.h5
@@ -31,15 +40,25 @@ __pycache__/
 *.npy
 *.npz
 
-# Media and binary files
+# Media and Binary Files
 *.pdf
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.svg
+*.ico
 *.mp4
+*.mp3
+*.wav
 *.zip
+*.tar.gz
 
-# Augment
-.augmentignore
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
