@@ -1,31 +1,37 @@
 # Site Configuration File
 #
 # Site settings
+locale: "en-US"
 title: Laptop Chemistry
+site_theme: default
+name: &name Brad Dallin
+email: &email bradley.dallin.phd@gmail.com
 description: >-
-  "My digital workspace for computational chemistry research,
+  My digital workspace for computational chemistry research,
   cheminformatics tools, and scientific computing projects.
   Sharing thoughts on methods, discoveries, and open source
   contributions that catch my attention in the world of scientific
-  computing."
+  computing.
+url: https://brad-dallin.github.io
 baseurl: ""
-url: "https://brad-dallin.github.io"
+repository: brad-dallin/brad-dallin.github.io
 
 
 # Author settings
 author: 
-  name: "Brad Dallin"
-  email: bradley.dallin.phd@gmail.com
+  name: *name
+  email: *email
   contact:
     - title: Mail
-      icon: "fa-solid fa-envelope"
-      url: "mailto:bradley.dallin.phd@gmail.com"
+      icon: fa-solid fa-envelope
+      url: mailto:*email
     - title: GitHub
-      icon: "fa-brands fa-github"
-      url: "https://github.com/brad-dallin"
+      icon: fa-brands fa-github
+      url: https://github.com/brad-dallin
     - title: LinkedIn
-      icon: "fa-brands fa-linkedin"
-      url: "https://www.linkedin.com/in/bradley-dallin/"
+      icon: fa-brands fa-linkedin
+      url: https://www.linkedin.com/in/bradley-dallin/
+
 
 # Build settings
 # theme: minima
@@ -33,6 +39,19 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
+
+
+# Analytics
+analytics:
+  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  google:
+    tracking_id          :
 
 # Exclude
 exclude:
@@ -46,6 +65,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
 
 ## Github pages fixed on deployment
 # lsi: false
