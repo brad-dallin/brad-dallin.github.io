@@ -1,42 +1,68 @@
 /**
- * Site header
+ * Layout Variables
+ * -----------------------------------------------------------------------------
+ */
+$layout: (
+  header: (
+    border: (top: 5px, bottom: 1px),
+    height: $spacing-unit * 1.865,
+    line-height: calc($base-line-height * $base-font-size * 2.25)
+  ),
+  nav: (
+    trigger: 36px,
+    icon: 26px,
+    padding: 18px
+  )
+);
+
+/**
+ * Site Header
+ * -----------------------------------------------------------------------------
  */
 .site-header {
   position: relative;
   width: 100%;
-  min-height: $spacing-unit * 1.865;
-  line-height: $base-line-height * $base-font-size * 2.25;
+  min-height: map-get($layout, header, height);
+  line-height: map-get($layout, header, line-height);
   background-color: $background-color;
-  border-top: 5px solid $border-color-03;
-  border-bottom: 1px solid $border-color-01;
+  border: {
+    top: map-get($layout, header, border, top) solid $border-color-03;
+    bottom: map-get($layout, header, border, bottom) solid $border-color-01;
+  }
 }
 
+// Site Title
 .site-title {
   @include relative-font-size(1.625);
-  font-weight: 300;
-  letter-spacing: -1px;
-  margin-bottom: 0;
   float: left;
+  margin-bottom: 0;
+  font: {
+    weight: 300;
+  }
+  letter-spacing: -1px;
 
-  @include media-query($on-palm) {
-    padding-right: 45px;
+  &, &:visited {
+    color: $site-title-color;
   }
 
-  &,
-  &:visited {
-    color: $site-title-color;
+  @include media-query($on-palm) {
+    padding-right: $spacing-unit * 0.75;
   }
 }
 
+// Site Navigation
 .site-nav {
   float: right;
   border: none;
   background-color: inherit;
 
-  label[for="nav-trigger"], #nav-trigger {
+  // Hide navigation controls by default
+  label[for="nav-trigger"],
+  #nav-trigger {
     display: none;
   }
 
+  // Navigation Items
   .nav-item {
     color: $text-color;
     &:not(:last-child) {
@@ -44,172 +70,166 @@
     }
   }
 
+  // Mobile Navigation
   @include media-query($on-medium) {
     position: absolute;
-    top: 9px;
+    top: map-get($layout, nav, padding) * 0.5;
     right: $spacing-unit * 0.6;
     background-color: $background-color;
     border: 1px solid $border-color-01;
     border-radius: 5px;
     text-align: right;
 
+    // Show navigation controls
     label[for="nav-trigger"] {
       display: block;
       float: right;
-      width: 36px;
-      height: 36px;
+      width: map-get($layout, nav, trigger);
+      height: map-get($layout, nav, trigger);
       cursor: pointer;
     }
 
+    // Menu Icon
     .menu-icon {
       float: right;
-      width: 36px;
-      height: 26px;
+      width: map-get($layout, nav, trigger);
+      height: map-get($layout, nav, icon);
       line-height: 0;
-      padding-top: 18px;
+      padding-top: map-get($layout, nav, padding);
       text-align: center;
 
       &::before {
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
       }
-
-      > svg path {
-        fill: $border-color-03;
-      }
     }
 
+    // Navigation States
     #nav-trigger {
-      ~ label[for=nav-trigger] .menu-icon {
-        &::before {
-          content: "\f0c9";
-          font-size: 1.25em;
-        }
+      ~ label[for="nav-trigger"] .menu-icon::before {
+        content: "\f0c9"; // hamburger icon
+        font-size: 1.25em;
       }
-      ~ .nav-items {
-        clear: both;
-        display: none
-      }
+
       &:checked {
-      ~ label[for=nav-trigger] .menu-icon {
-        &::before {
-          content: "\f00d";
+        ~ label[for="nav-trigger"] .menu-icon::before {
+          content: "\f00d"; // close icon
           font-size: 1.5em;
         }
-      }
+
         ~ .nav-items {
           display: block;
-          padding-bottom: 5px;
+          padding-bottom: map-get($layout, nav, padding) * 0.25;
+
           .nav-item {
-            margin-left: 20px;
+            margin-left: $spacing-unit * 0.4;
             padding: 5px 10px;
           }
         }
       }
-    }
 
-    .nav-item {
-      display: block;
-      padding: 5px 0;
-      color: $text-color;
-      line-height: $base-line-height;
+      ~ .nav-items {
+        clear: both;
+        display: none;
+      }
     }
   }
 }
 
 
-
 /**
- * Site footer
+ * Site Footer
+ * -----------------------------------------------------------------------------
  */
 .site-footer {
   border-top: 1px solid $border-color-01;
   padding: $spacing-unit 0;
+
+  &-heading {
+    @include relative-font-size(1.125);
+    margin-bottom: $spacing-unit * 0.5;
+  }
+
+  &-copyright {
+    @include relative-font-size(0.9);
+  }
 }
 
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit * .5;
-}
-
-.footer-copyright {
-  @include relative-font-size(0.9);
-}
-
-.feed-subscribe .svg-icon {
-  padding: 5px 5px 2px 0
-}
-
+// Footer Lists
 .contact-list,
 .social-media-list {
   list-style: none;
   margin-left: 0;
 }
 
-.footer-col-wrapper,
-.social-links {
-  @include relative-font-size(0.9375);
-  color: $brand-color-dimmed;
-}
-
+// Footer Grid Layout
 .footer-col {
-  margin-bottom: $spacing-unit * .5;
-}
+  margin-bottom: $spacing-unit * 0.5;
 
-.footer-col-1,
-.footer-col-2 {
-  width: calc(50% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: calc(100% - (#{$spacing-unit} / 2));
-}
-
-@media screen and (min-width: $on-large) {
-  .footer-col-1 {
-    width: calc(35% - (#{$spacing-unit} / 2));
+  &-wrapper {
+    @include relative-font-size(0.9375);
+    color: $brand-color-dimmed;
+    
+    @media screen and (min-width: $on-medium) {
+      display: flex;
+    }
   }
 
-  .footer-col-2 {
-    width: calc(20% - (#{$spacing-unit} / 2));
+  // Column Base Styles
+  &-1,
+  &-2 {
+    width: calc(50% - (#{$spacing-unit} / 2));
   }
 
-  .footer-col-3 {
-    width: calc(45% - (#{$spacing-unit} / 2));
-  }
-}
-
-@media screen and (min-width: $on-medium) {
-  .footer-col-wrapper {
-    display: flex
-  }
-
-  .footer-col {
+  &-3 {
     width: calc(100% - (#{$spacing-unit} / 2));
-    padding: 0 ($spacing-unit * .5);
+  }
+
+  // Column Large Screen Layout 
+  @media screen and (min-width: $on-large) {
+    &-1 { width: calc(35% - (#{$spacing-unit} / 2)); }
+    &-2 { width: calc(20% - (#{$spacing-unit} / 2)); }
+    &-3 { width: calc(45% - (#{$spacing-unit} / 2)); }
+  }
+
+  // Column Medium Screen Layout
+  @media screen and (min-width: $on-medium) {
+    width: calc(100% - (#{$spacing-unit} / 2));
+    padding: 0 ($spacing-unit * 0.5);
 
     &:first-child {
-      padding-right: $spacing-unit * .5;
+      padding-right: $spacing-unit * 0.5;
       padding-left: 0;
     }
 
     &:last-child {
       padding-right: 0;
-      padding-left: $spacing-unit * .5;
+      padding-left: $spacing-unit * 0.5;
     }
   }
 }
 
+// Footer Components
+.social-links {
+  @include relative-font-size(0.9375);
+  color: $brand-color-dimmed;
+}
+
+.feed-subscribe .svg-icon {
+  padding: 5px 5px 2px 0;
+}
 
 
 /**
- * Page content
+ * Page Content
+ * -----------------------------------------------------------------------------
  */
 .page-content {
   padding: $spacing-unit 0;
   flex: 1 0 auto;
 }
 
+// Content Typography
 .page-heading {
   @include relative-font-size(2);
 }
@@ -218,6 +238,7 @@
   @include relative-font-size(1.75);
 }
 
+// Post Lists
 .post-list {
   margin-left: 0;
   list-style: none;
@@ -237,21 +258,26 @@
   @include relative-font-size(1.5);
 }
 
-
-
 /**
- * Posts
+ * Post Content
+ * -----------------------------------------------------------------------------
  */
 .post-header {
   margin-bottom: $spacing-unit;
-  padding-bottom: 18px;
+  padding-bottom: map-get($layout, nav, padding);
   text-align: center;
   border-bottom: 1px solid $border-color-01;
 }
 
+// Post Metadata
 .post-meta {
-  .bullet-divider { padding-inline: 15px }
-  .meta-label { font-weight: 600 }
+  .bullet-divider { 
+    padding-inline: 15px;
+  }
+  
+  .meta-label { 
+    font-weight: 600;
+  }
 
   .force-inline {
     display: inline;
@@ -260,9 +286,13 @@
       padding-inline: 5px;
     }
   }
-  .post-authors { margin-top: 3px }
+  
+  .post-authors { 
+    margin-top: 3px;
+  }
 }
 
+// Post Typography
 .post-title,
 .post-content h1 {
   margin-bottom: 10px;
@@ -270,45 +300,31 @@
   font-weight: $base-font-weight;
   letter-spacing: -1px;
   line-height: 1.15;
-
-  @media screen and (min-width: $on-large) {
-    @include relative-font-size(2.625);
-  }
 }
 
 .post-content {
   margin-bottom: $spacing-unit;
 
-  h1, h2, h3, h4, h5, h6 { margin-top: $spacing-unit }
-
-  h2 {
-    @include relative-font-size(1.75);
-
-    @media screen and (min-width: $on-large) {
-      @include relative-font-size(2);
-    }
+  // Content Headings
+  h1, h2, h3, h4, h5, h6 { 
+    margin-top: $spacing-unit;
   }
 
-  h3 {
-    @include relative-font-size(1.375);
+  // Heading Font Sizes
+  h2 { @include relative-font-size(1.75); }
+  h3 { @include relative-font-size(1.375); }
+  h4 { @include relative-font-size(1.25); }
+  h5 { @include relative-font-size(1.125); }
+  h6 { @include relative-font-size(1.0625); }
 
-    @media screen and (min-width: $on-large) {
-      @include relative-font-size(1.625);
-    }
-  }
-
-  h4 {
-    @include relative-font-size(1.25);
-  }
-
-  h5 {
-    @include relative-font-size(1.125);
-  }
-  h6 {
-    @include relative-font-size(1.0625);
+  // Large Screen Typography
+  @media screen and (min-width: $on-large) {
+    h2 { @include relative-font-size(2); }
+    h3 { @include relative-font-size(1.625); }
   }
 }
 
+// Post Components
 .comments-disabled-message {
   text-align: center;
   font-weight: 300;
@@ -317,103 +333,113 @@
 .social-media-list {
   display: table;
   margin: 0 auto;
+  
   li {
     float: left;
-    min-width: 45px;
-    min-height: 45px;
+    min: {
+      width: 45px;
+      height: 45px;
+    }
     text-align: center;
     margin: 5px 10px 5px 0;
-    &:last-of-type { margin-right: 0 }
+    
+    &:last-of-type { 
+      margin-right: 0;
+    }
+    
     a {
       display: block;
       padding: 10px 12px;
       border: 1px solid $border-color-01;
-      &:hover { border-color: $border-color-02 }
+      
+      &:hover { 
+        border-color: $border-color-02;
+      }
     }
   }
 }
 
 
-
 /**
- * Pagination navbar
+ * Utilities
+ * -----------------------------------------------------------------------------
  */
+
+// Pagination
 .pagination {
   display: table;
   margin: 0 auto;
   list-style-type: none;
+
   li {
     float: left;
     margin: 0 3px;
     min-width: 45px;
     min-height: 45px;
     text-align: center;
-    a {
-      display: block;
-      text-decoration: none;
-      border: 1px solid $border-color-01;
-      &:hover { border-color: $border-color-02 }
-    }
+
     a, div {
       min-width: 41px;
       padding: 10px 12px;
       text-align: center;
       box-sizing: border-box;
     }
+
+    a {
+      display: block;
+      text-decoration: none;
+      border: 1px solid $border-color-01;
+      &:hover { border-color: $border-color-02; }
+    }
+
     div {
       border: 1px solid transparent;
       &.pager-edge {
         color: $border-color-01;
-        border: 1px dashed;
+        border-style: dashed;
       }
-      &.current-page {
-        font-weight: bold;
-      }
+      &.current-page { font-weight: bold; }
     }
   }
 }
 
-
-
-/**
- * Task-lists
- */
-
+// Task Lists
 .task-list {
   margin-left: 0;
   padding-left: $spacing-unit * 0.6;
-}
 
-.task-list-item {
-  list-style-type: none;
-  &-checkbox {
-    position: relative;
-    margin-right: $spacing-unit * 0.3;
-    margin-left: -$spacing-unit * 0.5;
-    appearance: none;
-    border: 8px solid $border-color-01;
-    vertical-align: text-top;
-    z-index: -1;
-    &::after {
-      position: absolute;
-      top: -8px;
-      left: -3px;
-      width: 4px;
-      height: 10px;
-      content: "";
-      border: solid transparent;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
+  &-item {
+    list-style-type: none;
+    
+    &-checkbox {
+      position: relative;
+      margin: {
+        right: $spacing-unit * 0.3;
+        left: -$spacing-unit * 0.5;
+      }
+      appearance: none;
+      border: 8px solid $border-color-01;
+      vertical-align: text-top;
+      z-index: -1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -3px;
+        width: 4px;
+        height: 10px;
+        border: solid transparent;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      &:checked::after { border-color: $border-color-03; }
     }
-    &:checked::after { border-color: $border-color-03 }
   }
 }
 
-
-
-/**
- * Grid helpers
- */
+// Grid Helpers
 @media screen and (min-width: $on-large) {
   .one-half {
     width: calc(50% - (#{$spacing-unit} / 2));
