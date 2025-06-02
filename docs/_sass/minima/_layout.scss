@@ -132,6 +132,10 @@
   margin-bottom: $spacing-unit * .5;
 }
 
+.footer-copyright {
+  @include relative-font-size(0.9);
+}
+
 .feed-subscribe .svg-icon {
   padding: 5px 5px 2px 0
 }
