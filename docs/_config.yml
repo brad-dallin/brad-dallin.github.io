@@ -21,7 +21,7 @@ plugins:
 
 
 # Minima skin selection. Available skins are:
-#   * classic            Default, light color scheme.
+#   * light              Default, light color scheme.
 #   * dark               Dark variant of the classic skin.
 #   * auto               Adaptive skin based on the classic and dark skins.
 #   * solarized-light    Light variant of solarized color scheme.
