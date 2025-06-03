@@ -29,12 +29,12 @@ plugins:
 #   * solarized          Adaptive skin for solarized color scheme skins.
 skin: auto
 
+# Specific site navigation
+nav_pages:
+  - about.md
+
 # Minima settings
 minima:
-  # Specific site navigation
-  nav_pages:
-    - about.md
-
   # Set to `true` to show excerpts on the homepage.
   show_excerpts: false
 
