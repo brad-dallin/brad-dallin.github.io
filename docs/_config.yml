@@ -33,22 +33,20 @@ skin: auto
 nav_pages:
   - about.md
 
-# Minima settings
-minima:
-  # Set to `true` to show excerpts on the homepage.
-  show_excerpts: false
+# Set to `true` to show excerpts on the homepage.
+show_excerpts: false
 
-  # Minima date format
-  date_format: "%b %d, %Y"
+# Minima date format
+date_format: "%b %d, %Y"
 
-  # Socials
-  social_links:
-    - title: GitHub
-      icon: github
-      url: https://github.com/brad-dallin
-    - title: LinkedIn
-      icon: linkedin
-      url: https://www.linkedin.com/in/brad-dallin
+# Socials
+social_links:
+  - title: GitHub
+    icon: github
+    url: https://github.com/brad-dallin
+  - title: LinkedIn
+    icon: linkedin
+    url: https://www.linkedin.com/in/brad-dallin
 
   # Hide RSS feed
   hide_site_feed_link: false
