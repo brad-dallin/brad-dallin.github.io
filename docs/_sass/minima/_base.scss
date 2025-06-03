@@ -14,7 +14,6 @@ dl, dd, ol, ul, figure {
 }
 
 
-
 /**
  * Basic styling
  */
@@ -33,7 +32,6 @@ body {
   flex-direction: column;
   overflow-wrap: break-word;
 }
-
 
 
 /**
@@ -59,7 +57,6 @@ main {
 }
 
 
-
 /**
  * Images
  */
@@ -67,7 +64,6 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-
 
 
 /**
@@ -80,7 +76,6 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
 }
-
 
 
 /**
@@ -98,7 +93,6 @@ li {
 }
 
 
-
 /**
  * Headings
  */
@@ -106,7 +100,6 @@ h1, h2, h3, h4, h5, h6 {
   color: $heading-color;
   font-weight: 500;
 }
-
 
 
 /**
@@ -154,7 +147,6 @@ blockquote {
     font-style: normal;
   }
 }
-
 
 
 /**
@@ -210,7 +202,6 @@ code.highlighter-rouge {
 }
 
 
-
 /**
  * Wrapper
  */
@@ -227,7 +218,6 @@ code.highlighter-rouge {
 }
 
 
-
 /**
  * Clearfix
  */
@@ -238,11 +228,9 @@ code.highlighter-rouge {
 }
 
 
-
 /**
  * Icons
  */
-
 .orange {
   color: #f66a0a;
 }
