@@ -48,5 +48,5 @@ social_links:
     icon: linkedin
     url: https://www.linkedin.com/in/brad-dallin
 
-  # Hide RSS feed
-  hide_site_feed_link: false
+# Hide RSS feed
+hide_site_feed_link: false
