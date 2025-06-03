@@ -19,7 +19,6 @@ plugins:
  - jekyll-seo-tag
 
 
-
 # Minima skin selection. Available skins are:
 #   * light              Default, light color scheme.
 #   * dark               Dark variant of the classic skin.

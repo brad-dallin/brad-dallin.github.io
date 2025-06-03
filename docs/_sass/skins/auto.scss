@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 // Default color scheme settings
-// These are overridden in classic.css and dark.scss
+// These are overridden in light.css and dark.scss
 
 $color-scheme-auto: true !default;
 $color-scheme-dark: false !default;
@@ -235,7 +235,7 @@ $dm-table-border-color:    $dm-border-color-01 !default;
 // --------------
 
 
-// Classic skin (always light mode)
+// Light skin
 // Assign outside of the if construct to establish global variable scope
 
 $brand-color: $lm-brand-color;
@@ -393,7 +393,7 @@ $table-border-color: $lm-table-border-color;
 
 } @else {
 
-  // Classic skin syntax highlighting
+  // Light skin syntax highlighting
   @include lm-highlight;
 
 }
