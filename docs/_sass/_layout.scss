@@ -1,0 +1,25 @@
+/**
+ * Layout Variables
+ * -----------------------------------------------------------------------------
+ */
+$layout: (
+  header: (
+    border: (top: 5px, bottom: 1px),
+    height: $spacing-unit * 1.865,
+    line-height: calc($base-line-height * $base-font-size * 2.25)
+  ),
+  nav: (
+    trigger: 36px,
+    icon: 26px,
+    padding: 18px
+  )
+);
+
+// Include styles
+@import 
+  "layout/header",
+  "layout/footer",
+  "layout/page",
+  "layout/post",
+  "layout/utilities"
+;

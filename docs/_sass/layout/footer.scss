@@ -1,0 +1,81 @@
+/**
+ * Site Footer
+ * -----------------------------------------------------------------------------
+ */
+.site-footer {
+  border-top: 1px solid $border-color-01;
+  padding: $spacing-unit 0;
+
+  &-heading {
+    @include relative-font-size(1.125);
+    margin-bottom: $spacing-unit * 0.5;
+  }
+
+  &-copyright {
+    @include relative-font-size(0.825);
+  }
+}
+
+// Footer Lists
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+// Footer Grid Layout
+.footer-col {
+  margin-bottom: $spacing-unit * 0.5;
+
+  &-wrapper {
+    @include relative-font-size(0.9375);
+    color: $brand-color-dimmed;
+    
+    @media screen and (min-width: $on-medium) {
+      display: flex;
+    }
+  }
+
+  // Column Base Styles
+  &-1,
+  &-2 {
+    width: calc(50% - (#{$spacing-unit} / 2));
+  }
+
+  &-3 {
+    width: calc(100% - (#{$spacing-unit} / 2));
+  }
+
+  // Column Large Screen Layout 
+  @media screen and (min-width: $on-large) {
+    &-1 { width: calc(35% - (#{$spacing-unit} / 2)); }
+    &-2 { width: calc(20% - (#{$spacing-unit} / 2)); }
+    &-3 { width: calc(45% - (#{$spacing-unit} / 2)); }
+  }
+
+  // Column Medium Screen Layout
+  @media screen and (min-width: $on-medium) {
+    width: calc(100% - (#{$spacing-unit} / 2));
+    padding: 0 ($spacing-unit * 0.5);
+
+    &:first-child {
+      padding-right: $spacing-unit * 0.5;
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      padding-left: $spacing-unit * 0.5;
+    }
+  }
+}
+
+// Footer Components
+.social-links {
+  @include relative-font-size(0.9375);
+  color: $brand-color-dimmed;
+}
+
+.feed-subscribe .svg-icon {
+  padding: 5px 5px 2px 0;
+}

@@ -1,0 +1,85 @@
+/**
+ * Utilities
+ * -----------------------------------------------------------------------------
+ */
+
+// Pagination
+.pagination {
+  display: table;
+  margin: 0 auto;
+  list-style-type: none;
+
+  li {
+    float: left;
+    margin: 0 3px;
+    min-width: 45px;
+    min-height: 45px;
+    text-align: center;
+
+    a, div {
+      min-width: 41px;
+      padding: 10px 12px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      border: 1px solid $border-color-01;
+      &:hover { border-color: $border-color-02; }
+    }
+
+    div {
+      border: 1px solid transparent;
+      &.pager-edge {
+        color: $border-color-01;
+        border-style: dashed;
+      }
+      &.current-page { font-weight: bold; }
+    }
+  }
+}
+
+// Task Lists
+.task-list {
+  margin-left: 0;
+  padding-left: $spacing-unit * 0.6;
+
+  &-item {
+    list-style-type: none;
+    
+    &-checkbox {
+      position: relative;
+      margin: {
+        right: $spacing-unit * 0.3;
+        left: -$spacing-unit * 0.5;
+      }
+      appearance: none;
+      border: 8px solid $border-color-01;
+      vertical-align: text-top;
+      z-index: -1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -3px;
+        width: 4px;
+        height: 10px;
+        border: solid transparent;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      &:checked::after { border-color: $border-color-03; }
+    }
+  }
+}
+
+// Grid Helpers
+@media screen and (min-width: $on-large) {
+  .one-half {
+    width: calc(50% - (#{$spacing-unit} / 2));
+  }
+}

@@ -1,0 +1,100 @@
+/**
+ * Post Content
+ * -----------------------------------------------------------------------------
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+  padding-bottom: map-get($layout, nav, padding);
+  text-align: center;
+  border-bottom: 1px solid $border-color-01;
+}
+
+// Post Metadata
+.post-meta {
+  .bullet-divider { 
+    padding-inline: 15px;
+  }
+  
+  .meta-label { 
+    font-weight: 600;
+  }
+
+  .force-inline {
+    display: inline;
+    &::before {
+      content: "•";
+      padding-inline: 5px;
+    }
+  }
+  
+  .post-authors { 
+    margin-top: 3px;
+  }
+}
+
+// Post Typography
+.post-title,
+.post-content h1 {
+  margin-bottom: 10px;
+  @include relative-font-size(2.625);
+  font-weight: $base-font-weight;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+
+.post-content {
+  margin-bottom: $spacing-unit;
+
+  // Content Headings
+  h1, h2, h3, h4, h5, h6 { 
+    margin-top: $spacing-unit;
+  }
+
+  // Heading Font Sizes
+  h2 { @include relative-font-size(1.75); }
+  h3 { @include relative-font-size(1.375); }
+  h4 { @include relative-font-size(1.25); }
+  h5 { @include relative-font-size(1.125); }
+  h6 { @include relative-font-size(1.0625); }
+
+  // Large Screen Typography
+  @media screen and (min-width: $on-large) {
+    h2 { @include relative-font-size(2); }
+    h3 { @include relative-font-size(1.625); }
+  }
+}
+
+// Post Components
+.comments-disabled-message {
+  text-align: center;
+  font-weight: 300;
+}
+
+.social-media-list {
+  display: table;
+  margin: 0 auto;
+  
+  li {
+    float: left;
+    min: {
+      width: 45px;
+      height: 45px;
+    }
+    text-align: center;
+    margin: 5px 10px 5px 0;
+    
+    &:last-of-type { 
+      margin-right: 0;
+    }
+    
+    a {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid $border-color-01;
+      
+      &:hover { 
+        border-color: $border-color-02;
+      }
+    }
+  }
+}
