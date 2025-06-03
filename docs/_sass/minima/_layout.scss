@@ -15,6 +15,7 @@ $layout: (
   )
 );
 
+
 /**
  * Site Header
  * -----------------------------------------------------------------------------
@@ -30,6 +31,7 @@ $layout: (
     bottom: map-get($layout, header, border, bottom) solid $border-color-01;
   }
 }
+
 
 // Site Title
 .site-title {
@@ -49,6 +51,7 @@ $layout: (
     padding-right: $spacing-unit * 0.75;
   }
 }
+
 
 // Site Navigation
 .site-nav {
@@ -257,6 +260,7 @@ $layout: (
   display: block;
   @include relative-font-size(1.5);
 }
+
 
 /**
  * Post Content
