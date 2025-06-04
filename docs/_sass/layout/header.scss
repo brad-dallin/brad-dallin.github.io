@@ -54,15 +54,7 @@
       margin-right: $spacing-unit * 0.5;
     }
   }
-
-  // .theme-toggle {
-  //   a {
-  //     width: 25px;
-  //     display: flex;
-  //     justify-content: center;
-  //     cursor: pointer;
-  //   }
-  // }
+  
 
   // Mobile Navigation
   @include media-query($on-medium) {

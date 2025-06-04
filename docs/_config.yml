@@ -2,15 +2,25 @@
 
 # Site settings
 title: Laptop Chemistry
-author:
-  name: Bradley Dallin, PhD
-  email: bradley.dallin.phd@gmail.com
 description: >-
   My digital workspace for computational chemistry research,
   cheminformatics tools, and scientific computing projects.
   Sharing thoughts on methods, discoveries, and open source
   contributions that catch my attention in the world of scientific
   computing.
+
+# Author
+author:
+  name: Bradley Dallin, PhD
+  email: bradley.dallin.phd@gmail.com
+
+social_links:
+  - title: GitHub
+    icon: github
+    url: https://github.com/brad-dallin
+  - title: LinkedIn
+    icon: linkedin
+    url: https://www.linkedin.com/in/brad-dallin
 
 
 # Build settings
@@ -37,15 +47,6 @@ show_excerpts: false
 
 # Minima date format
 date_format: "%b %d, %Y"
-
-# Socials
-social_links:
-  - title: GitHub
-    icon: github
-    url: https://github.com/brad-dallin
-  - title: LinkedIn
-    icon: linkedin
-    url: https://www.linkedin.com/in/brad-dallin
 
 # Hide RSS feed
 hide_site_feed_link: false
