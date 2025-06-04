@@ -22,6 +22,11 @@ social_links:
     icon: linkedin
     url: https://www.linkedin.com/in/brad-dallin
 
+# Hide email
+hide_site_email_link: false
+
+# Hide RSS feed
+hide_site_feed_link: false
 
 # Build settings
 plugins:
@@ -47,6 +52,3 @@ show_excerpts: false
 
 # Minima date format
 date_format: "%b %d, %Y"
-
-# Hide RSS feed
-hide_site_feed_link: false
