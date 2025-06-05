@@ -1,15 +1,50 @@
 {% include base_path %}
 
-<!-- Add favicons -->
-<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/assets/favicon/apple-touch-icon.png"/>
-<link rel="icon" type="image/svg+xml" href="{{ base_path }}/assets/favicon/favicon.svg"/>
-<link rel="icon" type="image/png" href="{{ base_path }}/assets/favicon/android-chrome-192x192.png" sizes="192x192"/>
-<link rel="manifest" href="{{ base_path }}/assets/favicon/manifest.json"/>
-<link rel="icon" href="/assets/favicon/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
-<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+<!-- Favicon Configuration -->
+<link 
+  rel="apple-touch-icon" 
+  sizes="180x180" 
+  href="{{ base_path }}/assets/favicon/apple-touch-icon.png"
+/>
+<link 
+  rel="icon" 
+  type="image/svg+xml" 
+  href="{{ base_path }}/assets/favicon/favicon.svg"
+/>
+<link 
+  rel="icon" 
+  type="image/png" 
+  sizes="192x192"
+  href="{{ base_path }}/assets/favicon/android-chrome-192x192.png" 
+/>
+<link 
+  rel="manifest" 
+  href="{{ base_path }}/assets/favicon/manifest.json"
+/>
+<link 
+  rel="icon" 
+  href="{{ base_path }}/assets/favicon/favicon.ico"
+/>
 
+<!-- Theme Configuration -->
+<meta 
+  name="theme-color" 
+  content="#ffffff"
+/>
 
-<!-- Support for MatJax -->
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- Academic Icons -->
+<link 
+  rel="stylesheet" 
+  href="{{ base_path }}/assets/css/academicons.css"
+/>
+
+<!-- MathJax Configuration -->
+<script 
+  src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"
+  defer
+></script>
+<script 
+  id="MathJax-script" 
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  async
+></script>
