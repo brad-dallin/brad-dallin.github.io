@@ -33,6 +33,8 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
 
+# Google analytics
+google_analytics:
 
 # Minima skin selection. Available skins are:
 #   * light              Default, light color scheme.

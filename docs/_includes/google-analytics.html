@@ -1,8 +1,29 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){window.dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!-- Google Analytics Configuration -->
+{% if site.google_analytics %}
+  <!-- Global site tag (gtag.js) -->
+  <script 
+    async 
+    src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
+    crossorigin="anonymous"
+  ></script>
+  
+  <!-- Analytics Implementation -->
+  <script>
+    // Initialize data layer
+    window.dataLayer = window.dataLayer || [];
+    
+    // Define gtag function
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    
+    // Set JavaScript loading timestamp
+    gtag('js', new Date());
 
-  gtag('config', '{{ site.google_analytics }}');
-</script>
+    // Configure analytics with site ID
+    gtag('config', '{{ site.google_analytics }}', {
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
+{% endif %}
