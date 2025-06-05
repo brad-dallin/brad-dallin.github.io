@@ -1,8 +1,19 @@
+{% include base_path %}
+
+<!-- Navigation Items Container -->
 <div class="nav-items">
   {%- for path in include.paths -%}
-  {%- assign hyperpage = site.pages | where: "path", path | first -%}
-  {%- if hyperpage.title %}
-  <a class="nav-item" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
-  {%- endif -%}
-  {%- endfor %}
+    {%- assign hyperpage = site.pages | where: "path", path | first -%}
+    {%- if hyperpage.title -%}
+      <a 
+        class="nav-item"
+        href="{{ base_path }}{{ hyperpage.url }}"
+        {%- if page.url == hyperpage.url %} 
+          aria-current="page"
+        {%- endif -%}
+      >
+        {{ hyperpage.title | escape }}
+      </a>
+    {%- endif -%}
+  {%- endfor -%}
 </div>
