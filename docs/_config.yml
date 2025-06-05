@@ -34,12 +34,12 @@ plugins:
  - jekyll-seo-tag
 
 # Google analytics
-google_analytics:
+google_analytics: G-V4CYE1QFLX
 
-# Minima skin selection. Available skins are:
+# Skin selection. Available skins are:
+#   * auto               Adaptive skin based on the classic and dark skins.
 #   * light              Default, light color scheme.
 #   * dark               Dark variant of the classic skin.
-#   * auto               Adaptive skin based on the classic and dark skins.
 #   * solarized-light    Light variant of solarized color scheme.
 #   * solarized-dark     Dark variant of solarized color scheme.
 #   * solarized          Adaptive skin for solarized color scheme skins.
@@ -52,5 +52,5 @@ nav_pages:
 # Set to `true` to show excerpts on the homepage.
 show_excerpts: false
 
-# Minima date format
+# Date format
 date_format: "%b %d, %Y"
