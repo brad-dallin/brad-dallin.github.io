@@ -1,11 +1,13 @@
 {% include base_path %}
 
-<!-- Font Awesome CSS -->
+<!-- External Resources -->
 <link 
   id="fa-stylesheet" 
   rel="stylesheet" 
   href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"
->
+  integrity="sha384-..."
+  crossorigin="anonymous"
+/>
 
 <!-- Site Footer -->
 <footer class="site-footer h-card">
@@ -17,9 +19,11 @@
         <!-- Copyright Information -->
         <div class="footer-copyright">
           <p class="copyright-text">
-            &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}
-            </br>
-            Site last updated: {{ "now" | date: '%Y-%m-%d' }}
+            &copy; {{ site.time | date: '%Y' }} 
+            {{ site.name | default: site.title }}
+          </p>
+          <p class="last-updated">
+            Site last updated: {{ "now" | date: "%Y-%m-%d" }}
           </p>
         </div>
 
