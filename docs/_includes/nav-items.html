@@ -2,8 +2,10 @@
 
 <!-- Navigation Items Container -->
 <div class="nav-items">
+  <!-- Main Navigation Links -->
   {%- for path in include.paths -%}
     {%- assign hyperpage = site.pages | where: "path", path | first -%}
+    
     {%- if hyperpage.title -%}
       <a 
         class="nav-item"
@@ -16,4 +18,15 @@
       </a>
     {%- endif -%}
   {%- endfor -%}
+
+  <!-- Theme Toggle -->
+  <!-- <div class="theme-toggle">
+    <a 
+      id="theme-toggle-button"
+      class="nav-item"
+      aria-label="Toggle theme"
+    >
+      <i class="fas fa-adjust"></i>
+    </a>
+  </div> -->
 </div>
