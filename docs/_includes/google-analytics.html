@@ -4,7 +4,6 @@
   <script 
     async 
     src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"
-    crossorigin="anonymous"
   ></script>
   
   <!-- Analytics Implementation -->
@@ -21,9 +20,6 @@
     gtag('js', new Date());
 
     // Configure analytics with site ID
-    gtag('config', '{{ site.google_analytics }}', {
-      'anonymize_ip': true,
-      'cookie_flags': 'SameSite=None;Secure'
-    });
+    gtag('config', '{{ site.google_analytics }}');
   </script>
 {% endif %}
