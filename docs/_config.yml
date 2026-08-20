@@ -1,13 +1,11 @@
 # Jekyll Configuration
 
 # Site settings
-title: Brad Dallin
+title: Laptop Drug Hunting
 description: >-
-  My digital workspace for computational chemistry research,
-  cheminformatics tools, and scientific computing projects.
-  Sharing thoughts on methods, discoveries, and open source
-  contributions that catch my attention in the world of scientific
-  computing.
+  Laptop Drug Hunting is a blog exploring topics I find interesting
+  in computational drug discovery requiring no more compute than a
+  semi-reliable laptop.
 
 # Author
 author:
