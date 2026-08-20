@@ -1,7 +1,8 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: post
+title: Welcome to Laptop Drug Hunting
+author: Brad Dallin
+tags: Announcements
 ---
 
 # Welcome to Laptop Drug Hunting

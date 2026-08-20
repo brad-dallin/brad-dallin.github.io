@@ -21,7 +21,7 @@ social_links:
     url: https://www.linkedin.com/in/brad-dallin
 
 # Hide email
-hide_site_email_link: false
+hide_site_email_link: true
 
 # Hide RSS feed
 hide_site_feed_link: false
@@ -45,6 +45,7 @@ skin: auto
 
 # Specific site navigation
 nav_pages:
+  - blog.md
   - about.md
 
 # Set to `true` to show excerpts on the homepage.
@@ -52,3 +53,7 @@ show_excerpts: false
 
 # Date format
 date_format: "%b %d, %Y"
+
+# Include
+# include:
+#   - /assets/favicon/favicon.ico
