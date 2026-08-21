@@ -1,0 +1,18 @@
+[workspace]
+authors = ["brad-dallin <bradley.dallin.phd@gmail.com>"]
+channels = ["conda-forge"]
+name = "notebooks"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.14.7,<3.15"
+pip = ">=26.2.1,<27"
+ipykernel = ">=7.3.0,<8"
+ipywidgets = ">=8.1.9,<9"
+rdkit = ">=2026.3.5,<2027"
+adbc-driver-postgresql = ">=1.12.0,<2"
+pyarrow = ">=25.0.0,<26"
+python-dotenv = ">=1.2.3,<2"
