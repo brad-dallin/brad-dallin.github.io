@@ -30,6 +30,7 @@ __pycache__/
 *~
 
 # Data and Database Files
+data/
 *.csv
 *.xlsx
 *.json
