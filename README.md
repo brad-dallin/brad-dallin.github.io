@@ -1,6 +1,6 @@
 ## About
 
-My digital workspace for computational chemistry research, cheminformatics tools, and scientific computing projects. Sharing thoughts on methods, discoveries, and open source contributions that catch my attention in the world of scientific computing.
+My digital workspace for computational drug hunting. Sharing thoughts on methods, discoveries, and open source contributions that catch my attention in the world of biotechnology and drug discovery.
 
 ## License
 
