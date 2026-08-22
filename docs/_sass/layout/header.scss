@@ -5,12 +5,12 @@
 .site-header {
   position: relative;
   width: 100%;
-  min-height: map-get($layout, header, height);
-  line-height: map-get($layout, header, line-height);
+  min-height: map-get(map-get($layout, header), height);
+  line-height: map-get(map-get($layout, header), line-height);
   background-color: $background-color;
   border: {
-    top: map-get($layout, header, border, top) solid $border-color-03;
-    bottom: map-get($layout, header, border, bottom) solid $border-color-01;
+    top: map-get(map-get(map-get($layout, header), border), top) solid $border-color-03;
+    bottom: map-get(map-get(map-get($layout, header), border), bottom) solid $border-color-01;
   }
 }
 
@@ -59,7 +59,7 @@
   // Mobile Navigation
   @include media-query($on-medium) {
     position: absolute;
-    top: map-get($layout, nav, padding) * 0.5;
+    top: map-get(map-get($layout, nav), padding) * 0.5;
     right: $spacing-unit * 0.6;
     background-color: $background-color;
     border: 1px solid $border-color-01;
@@ -70,18 +70,18 @@
     label[for="nav-trigger"] {
       display: block;
       float: right;
-      width: map-get($layout, nav, trigger);
-      height: map-get($layout, nav, trigger);
+      width: map-get(map-get($layout, nav), trigger);
+      height: map-get(map-get($layout, nav), trigger);
       cursor: pointer;
     }
 
     // Menu Icon
     .menu-icon {
       float: right;
-      width: map-get($layout, nav, trigger);
-      height: map-get($layout, nav, icon);
+      width: map-get(map-get($layout, nav), trigger);
+      height: map-get(map-get($layout, nav), icon);
       line-height: 0;
-      padding-top: map-get($layout, nav, padding);
+      padding-top: map-get(map-get($layout, nav), padding);
       text-align: center;
 
       &::before {
@@ -105,7 +105,7 @@
 
         ~ .nav-items {
           display: block;
-          padding-bottom: map-get($layout, nav, padding) * 0.25;
+          padding-bottom: map-get(map-get($layout, nav), padding) * 0.25;
 
           .nav-item {
             margin-left: $spacing-unit * 0.4;

@@ -4,7 +4,7 @@
  */
 .post-header {
   margin-bottom: $spacing-unit;
-  padding-bottom: map-get($layout, nav, padding);
+  padding-bottom: map-get(map-get($layout, nav), padding);
   text-align: center;
   border-bottom: 1px solid $border-color-01;
 }
